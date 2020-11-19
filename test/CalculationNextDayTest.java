@@ -7,7 +7,7 @@ class CalculationNextDayTest {
     @Test
     void testIsLeapYear() {
         CalculationNextDay calculationNextDay = new CalculationNextDay();
-        int year = 1;
+        int year = 200;
 
         boolean result = calculationNextDay.isLeapYear(year);
         assertEquals(false,result);
@@ -36,15 +36,6 @@ class CalculationNextDayTest {
         boolean result = calculationNextDay.isLeapYear(year);
         assertEquals(true,result);
     }
-    @Test
-    void testIsLeapYear4() {
-        CalculationNextDay calculationNextDay = new CalculationNextDay();
-        int year = -400;
-
-        boolean result = calculationNextDay.isLeapYear(year);
-        assertEquals(false,result);
-    }
-
     @Test
     void testIsThirtyDay(){
         CalculationNextDay calculationNextDay = new CalculationNextDay(1,3,2018);
@@ -103,9 +94,10 @@ class CalculationNextDayTest {
         int[] result = calculationNextDay.nextDay();
         assertArrayEquals(expected, result);
     }
+    @Test
     void testNextDay6() {
-        int[] expected = {1, 5, 401};
-        CalculationNextDay calculationNextDay = new CalculationNextDay(30, 4, 401);
+        int[] expected = {29, 2, 8};
+        CalculationNextDay calculationNextDay = new CalculationNextDay(28, 2, 8);
         int[] result = calculationNextDay.nextDay();
         assertArrayEquals(expected, result);
     }

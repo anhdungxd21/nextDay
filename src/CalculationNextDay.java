@@ -82,17 +82,12 @@ public class CalculationNextDay {
         boolean isDivideByFour = year % 4 == 0;
         boolean isDivideBy100 = year % 100 == 0;
         boolean isDivideBy400 = year % 400 == 0;
-        if(year <= 0 ){
-            return false;
+        if (isDivideBy400){
+            return true;
         }
-        if(isDivideByFour){
-            if(isDivideBy100 && isDivideBy400){
-                return true;
-            }else{
-                return false;
-            }
-        }else {
-            return false;
+        if (isDivideByFour && !isDivideBy100){
+            return true;
         }
+        return false;
     }
 }
